@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:src/flutter/material.dart';
 import 'home_screen.dart';
 import 'players_screen.dart';
 import 'diretoria_screen.dart';
@@ -30,18 +30,16 @@ class AppDrawer extends StatelessWidget {
             leading: const Icon(Icons.home),
             title: const Text('Home'),
             onTap: () {
-           
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => HomeScreen(
-                        token: '',
-                        role:
-                            ''), // Certifique-se de passar os parâmetros corretos
-                  ),
-                  (route) => false, // Remove todas as telas anteriores
-                );
-             
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => HomeScreen(
+                      token: '',
+                      role:
+                          ''), // Certifique-se de passar os parâmetros corretos
+                ),
+                (route) => false, // Remove todas as telas anteriores
+              );
             },
           ),
           ListTile(
@@ -64,16 +62,36 @@ class AppDrawer extends StatelessWidget {
               );
             },
           ),
-          ListTile(
+          //  if (currentScreen == 'Jogadores') // Apenas na tela "Jogadores"
+          ExpansionTile(
             leading: const Icon(Icons.people),
             title: const Text('Jogadores'),
-            onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (_) => const PlayersScreen()),
-              );
-            },
+            children: [
+              ListTile(
+                leading: const Icon(Icons.people),
+                title: const Text('Estatísticas'),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (_) => const PlayersScreen()),
+                  );
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.add),
+                title: const Text('Cadastrar Estatísticas'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const InsertStatisticsScreen()),
+                  );
+                },
+              ),
+            ],
           ),
+          
           ListTile(
             leading: const Icon(Icons.business),
             title: const Text('Diretoria'),
@@ -83,20 +101,7 @@ class AppDrawer extends StatelessWidget {
                 MaterialPageRoute(builder: (_) => const DiretoriaScreen()),
               );
             },
-          ),
-          if (currentScreen == 'Jogadores') // Apenas na tela "Jogadores"
-            ListTile(
-              leading: const Icon(Icons.add),
-              title: const Text('Cadastrar Estatísticas'),
-              onTap: () {
-                Navigator.pop(context); // Fecha o Drawer
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (_) => const InsertStatisticsScreen()),
-                );
-              },
-            ),
+          )
         ],
       ),
     );

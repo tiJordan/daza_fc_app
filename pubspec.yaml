@@ -1,4 +1,4 @@
-name: flutter_app
+name: daza_fc_app
 description: Um novo projeto Flutter para gerenciamento de estatísticas, calendário e uploads.
 
 publish_to: 'none' # Remova essa linha se for publicar no pub.dev
@@ -13,27 +13,22 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   http: ^1.3.0         # Para requisições HTTP à API
-  file_picker: ^9.2.0     # Para selecionar arquivos (vídeos) no dispositivo
-  image_picker: ^1.1.2    # Para selecionar imagens no dispositivo
-  path_provider: ^2.0.2   # Para acessar o sistema de arquivos do dispositivos
-  google_fonts: any
-  table_calendar: ^3.2.0
+  file_picker: ^9.2.1     # Para selecionar arquivos (vídeos) no dispositivo
   video_player: ^2.9.3
   intl: ^0.20.2
-  image_picker_linux: ^0.2.1+2
-  material_color_utilities: ^0.11.1
-
+  table_calendar: ^3.1.0
+  image_picker: ^1.0.4
+  flutter_lints: ^5.0.0  
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  
 
 flutter:
   uses-material-design: true
-  assets:
-    - assets/images/logo.png
-    - assets/images/background.png
-    - assets/images/background_home.png
-    - assets/images/diretoria_soon.png
-    
-  
+assets:
+  - assets/images/logo.png
+  - assets/images/background.png
+  - assets/images/background_home.png
+  - assets/images/diretoria_soon.png

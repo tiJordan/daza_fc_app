@@ -52,7 +52,7 @@ class _PlayersScreenState extends State<PlayersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Jogadores'),
+        title: const Text('Estatísticas dos Jogadores'),
         backgroundColor: Colors.blueGrey, // Cor do AppBar
       ),
       drawer:

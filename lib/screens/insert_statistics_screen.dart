@@ -57,7 +57,7 @@ class _InsertStatisticsScreenState extends State<InsertStatisticsScreen> {
                             PlayersScreen(players: [])), // Navega para PlayersScreen
                   );
                 },
-                child: const Text('Ir para Jogadores'),
+                child: const Text('Ir para Estatísticas'),
               ),
             ],
           ),
